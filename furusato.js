@@ -23,7 +23,7 @@
     return r;
   }
 
-  setSelect = function(select, value) {
+  let setSelect = function(select, value) {
     let opts = select.options;
     for (let opt, j = 0; opt = opts[j]; j++) {
       if (opt.text == value) {
