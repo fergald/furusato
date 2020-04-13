@@ -79,3 +79,8 @@ and click "go".
 Feel free to do whatever you want this.
 Hopefully it works with next year's form
 with minor modifications.
+
+I might turn this in a chrome extension
+however I think the idea of an extension
+that has access to the tax site is pretty shady,
+so I don't know.
