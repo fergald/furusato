@@ -66,14 +66,6 @@
     submitInput.value = "go";
     uiDiv.appendChild(submitInput);
 
-    csvInput.onchange = function() {
-      const [date, ken, machi, amount] = csvInput.value.split(",");
-      dateInput.value = date || "";
-      kenInput.value = ken || "";
-      machiInput.value = machi || "";
-      amountInput.value = amount || "";
-    }
-
     const onClick = function() {
       console.log("here")
       const [year, month, day] = parseDate(f_date.value);
@@ -112,18 +104,28 @@
 
       setSelect(tPrefecture, kenInput.value);
       tPrefecture.onchange();
+
       if (machiInput.value) {
         setSelect(tMunicipal, machiInput.value);
         tMunicipal.onchange();
       }
+
       if (!amountInput.value) {
         throw "Need an amount";
       }
       t761230t.value = amountInput.value;
     }
     submitInput.onclick = onClick;
-  }
 
+    csvInput.onchange = function() {
+      const [date, ken, machi, amount] = csvInput.value.split(",");
+      dateInput.value = date || "";
+      kenInput.value = ken || "";
+      machiInput.value = machi || "";
+      amountInput.value = amount || "";
+      submitInput.onclick();
+    }
+  }
 
   addUi(kifuModal);
 
