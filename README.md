@@ -74,7 +74,7 @@ If you don't have your data in CSV
 you can just type things into the individual fields
 and click "go".
 
-## Future
+# Future
 
 Feel free to do whatever you want this.
 Hopefully it works with next year's form
