@@ -44,19 +44,23 @@
     const csvInput = e("input", "f_csv");
     csvInput.size = 40;
     csvDiv.appendChild(csvInput);
+
     uiDiv.appendChild(t("Date"));
     const dateInput = e("input", "f_date");
     dateInput.placeholder = "2019-12-01";
     uiDiv.appendChild(dateInput);
+
     uiDiv.appendChild(t(" Ken"));
     const kenInput = e("input", "f_ken");
     uiDiv.appendChild(kenInput);
     uiDiv.appendChild(t(" Machi"));
+
     const machiInput = e("input", "f_machi");
     uiDiv.appendChild(machiInput);
     uiDiv.appendChild(t(" JPY"));
     const amountInput = e("input", "f_amount");
     uiDiv.appendChild(amountInput);
+
     const submitInput = e("input", "f_submit");
     submitInput.type = "button";
     submitInput.value = "go";
@@ -115,6 +119,7 @@
 
 
   addUi(kifuModal);
+
   if (prevCsv) {
     f_csv.value = prevCsv;
     f_csv.onchange();
