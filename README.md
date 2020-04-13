@@ -39,7 +39,8 @@ or you can read the JS and see that it's harmless.
 When you get the form open in your browser
 (I'm assuming chrome),
 hit CTRL-i to open the debug tools.
-Copy the JS from here and paste it into the JS console.
+Copy the JS from [here](https://raw.githubusercontent.com/fergald/furusato/master/furusato.js)
+and paste it into the JS console.
 
 You're done.
 
