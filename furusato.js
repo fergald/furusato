@@ -94,9 +94,16 @@
       s761_date_MON.onchange();
       setSelect(s761_date_DAY, parseInt(day));
 
+      t761180s.selectedIndex = 2;
+      t761180s.onchange();
+      if (t761180s.selectedOptions[0].text.indexOf("ふるさと納税") == -1) {
+        throw "No furusato";
+      }
+
       if (!kenInput.value) {
         throw "Need a ken";
       }
+
       if (machiInput.value) {
         s16_kifusakiKbn_2.click();
       } else {
