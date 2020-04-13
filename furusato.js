@@ -1,4 +1,8 @@
+// Try do everything in a scope to avoid polluting the JS environment.
+// All my HTML elements have IDs that begin with f_.
 {
+  // Remove any old version of the UI but preserved the CSV field's
+  // value.
   let ui = document.getElementById("f_ui");
   let prevCsv;
   if (ui) {
@@ -6,23 +10,28 @@
     ui.remove();
   }
 
+  // Dumb date parsing.
   const parseDate = function(d) {
     const parts = d.split("-");
     return parts;
   }
 
+  // Shortcut for creating elements with an id.
   let e = function(e, id) {
     const r = document.createElement(e);
     r.id = id;
     return r;
   }
 
+  // Shortcut for creating spans of text.
   let t = function(text) {
     const r = e("span");
     r.textContent = text;
     return r;
   }
 
+  // Given a select element, set it to the option that has this text
+  // value.
   let setSelect = function(select, value) {
     let opts = select.options;
     for (let opt, j = 0; opt = opts[j]; j++) {
@@ -34,6 +43,8 @@
     throw "Couldn't find " + value;
   }
 
+  // Adds all of the UI before the first child of the passed-in
+  // element, main.
   const addUi = function(main) {
     const uiDiv = e("div", "f_ui");
     main.insertBefore(uiDiv, main.firstChild);
@@ -66,6 +77,8 @@
     submitInput.value = "go";
     uiDiv.appendChild(submitInput);
 
+    // The main action, takes the values of my fields and tweaks the
+    // form.
     const onClick = function() {
       const [year, month, day] = parseDate(f_date.value);
       if (year != "2019") {
@@ -83,6 +96,7 @@
       s761_date_MON.onchange();
       setSelect(s761_date_DAY, parseInt(day));
 
+      // We're doing furusato.
       t761180s.selectedIndex = 2;
       t761180s.onchange();
       if (t761180s.selectedOptions[0].text.indexOf("ふるさと納税") == -1) {
@@ -116,6 +130,7 @@
 
     csvInput.onchange = function() {
       const [date, ken, machi, amount] = csvInput.value.split(",");
+      // Get rid of undefineds.
       dateInput.value = date || "";
       kenInput.value = ken || "";
       machiInput.value = machi || "";
@@ -126,6 +141,7 @@
 
   addUi(kifuModal);
 
+  // Install "c" shortcut.
   window.onkeypress = function (e) {
     var code = e.which || e.keyCode;
     if (code == 99) {
@@ -136,6 +152,7 @@
     }
   }
 
+  // Restore previous CSV value if there was one.
   if (prevCsv) {
     f_csv.value = prevCsv;
     f_csv.onchange();
