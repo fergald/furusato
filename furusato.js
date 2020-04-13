@@ -30,6 +30,12 @@
     return r;
   }
 
+  // Put the error message in the error area and throw an exception.
+  const reportError = function (e) {
+    f_error.textContent = e;
+    throw e;
+  }
+
   // Given a select element, set it to the option that has this text
   // value.
   let setSelect = function(select, value) {
@@ -40,7 +46,7 @@
         return;
       }
     }
-    throw "Couldn't find " + value;
+    reportError("Couldn't find " + value);
   }
 
   // Adds all of the UI before the first child of the passed-in
@@ -77,12 +83,19 @@
     submitInput.value = "go";
     uiDiv.appendChild(submitInput);
 
+    const error = e("div", "f_error");
+    error.style = "color: red";
+    uiDiv.appendChild(error);
+
     // The main action, takes the values of my fields and tweaks the
     // form.
     const onClick = function() {
+      // Clear any previous error.
+      f_error.textContent = "";
+
       const [year, month, day] = parseDate(f_date.value);
       if (year != "2019") {
-        throw "only 2019! - " + year;
+        reportError("only 2019! - " + year);
       }
 
       if (month <= 4) {
@@ -100,11 +113,11 @@
       t761180s.selectedIndex = 2;
       t761180s.onchange();
       if (t761180s.selectedOptions[0].text.indexOf("ふるさと納税") == -1) {
-        throw "No furusato";
+        reportError("No furusato");
       }
 
       if (!kenInput.value) {
-        throw "Need a ken";
+        reportError("Need a ken");
       }
 
       if (machiInput.value) {
@@ -122,7 +135,7 @@
       }
 
       if (!amountInput.value) {
-        throw "Need an amount";
+        reportError("Need an amount");
       }
       t761230t.value = amountInput.value;
     }

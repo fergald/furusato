@@ -74,6 +74,15 @@ If you don't have your data in CSV
 you can just type things into the individual fields
 and click "go".
 
+## Errors
+
+At the moment if there are any errors,
+e.g. a date that can't be parsed
+or it can't find the town you entered,
+you get a message in red below the input boxes
+and it throws an exception
+which you can see on the JS console.
+
 # Future
 
 Feel free to do whatever you want this.
