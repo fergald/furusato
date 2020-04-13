@@ -31,12 +31,18 @@ I can't think of a worse way of having a human input a date.
 
 # Setup
 
-*WARNING* You really shouldn't paste random JS from untrusted sites
-into your JS console,
-so don't follow these instructions unless you trust me
-or you can read the JS and see that it's harmless.
+*WARNING* Never paste random JS from untrusted sites
+into your JS console.
+I repeat,
+*DO NOT FOLLOW THESE INSTRUCTIONS IF YOU DO NOT UNDERSTAND THE DANGERS*.
 
-When you get the form open in your browser
+If you do decide to do this,
+don't blame me if you lose all your work.
+This code worked for me
+it may not work for you.
+It might do something much worse for you!
+
+When you get the furusato form open in your browser
 (I'm assuming chrome),
 hit CTRL-i to open the debug tools.
 Copy the JS from [here](https://raw.githubusercontent.com/fergald/furusato/master/furusato.js)
