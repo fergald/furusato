@@ -128,7 +128,15 @@
   }
 
   addUi(kifuModal);
-
+  window.onkeypress = function (e) {
+    var code = e.which || e.keyCode;
+    if (code == 99) {
+      f_csv.focus();
+      f_csv.select();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
   if (prevCsv) {
     f_csv.value = prevCsv;
     f_csv.onchange();
