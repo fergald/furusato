@@ -67,21 +67,18 @@
     uiDiv.appendChild(submitInput);
 
     const onClick = function() {
-      console.log("here")
       const [year, month, day] = parseDate(f_date.value);
-      console.log([year, month, day]);
       if (year != "2019") {
         throw "only 2019! - " + year;
       }
 
       if (month <= 4) {
         setSelect(s761_date_ERA, "平成");
-        // setSelect(s761_date_NEN, year - 2019 + 31);
       } else {
         setSelect(s761_date_ERA, "令和");
-        // setSelect(s761_date_NEN, year - 2018);
       }
       s761_date_ERA.onchange();
+
       setSelect(s761_date_MON, parseInt(month));
       s761_date_MON.onchange();
       setSelect(s761_date_DAY, parseInt(day));
@@ -128,6 +125,7 @@
   }
 
   addUi(kifuModal);
+
   window.onkeypress = function (e) {
     var code = e.which || e.keyCode;
     if (code == 99) {
@@ -137,6 +135,7 @@
       e.preventDefault();
     }
   }
+
   if (prevCsv) {
     f_csv.value = prevCsv;
     f_csv.onchange();
