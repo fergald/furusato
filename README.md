@@ -56,14 +56,6 @@ You'll see some input fields have appeared
 at the top of the form.
 You have 2 choices.
 
-## Keyboard short-cut
-
-If you press `c` on your keyboard
-focus moves to the CSV field.
-If you needed to actually press the letter c,
-I'm sorry.
-You can paste `windows.onkeypress = undefined` into the JS console.
-
 ## CSV
 
 The CSV field lets you paste in 1 comma-separated entry.
@@ -79,6 +71,14 @@ All you have to do is click the button at the bottom of the page.
 If you don't have your data in CSV
 you can just type things into the individual fields
 and click "go".
+
+## Keyboard short-cut
+
+If you press `c` on your keyboard
+focus moves to the CSV field.
+If you needed to actually press the letter c,
+I'm sorry.
+You can paste `windows.onkeypress = undefined` into the JS console.
 
 ## Errors
 
