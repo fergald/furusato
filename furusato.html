@@ -1,0 +1,225 @@
+<div id="kifuModal">
+
+        <p>寄附金の証明書を1件ずつ入力してください。</p>
+
+        <a id="inputmethodLink" href="javascript:void(0);" class="out-link" style="" title="入力件数が多い場合の入力方法はこちら" onclick="YokuaruWindowOpen(getURL(2019,'L0764'));return false;">入力件数が多い場合の入力方法はこちら</a>
+        <div class="form-group">
+            <p class="form-label">寄附年月日</p>
+            <p class="error-detail"></p>
+            <div class="form-control" style="margin-left:-10px;">
+                <script type="text/javascript">
+                    <!-- 
+
+                    var s761_date = new objDate("s761_date", 0, 0, fromYmd, toYmd, 0, vEraSpaceWS);
+
+                    s761_date.Allocate("s761_date");
+
+                    $(function(){
+                        $("#inputmethodLink").focus(function(){
+                           if( vModalInitFlg == "1" ){
+                               $("#s761_date_ERA").focus();
+                               vModalInitFlg = "0";
+                           }
+                        });
+                    });
+                    
+                    //-->
+                </script><select name="s761_date_ERA" style="width:65px;" id="s761_date_ERA" onchange="searchGengo(&quot;s761_date&quot;, 0, 2019, 2019);"><option value="" selected=""></option><option value="4">平成</option><option value="5">令和</option></select><label for="s761_date_ee" class="triangleDiplay"></label><select name="s761_date_NEN" style="width:80px;" id="s761_date_NEN" onchange="jsSetMM(&quot;s761_date&quot;, 0, 20190101, 20191231);"><option value="31">31</option></select><label for="s761_date_NEN" class="triangleDiplay"></label><span class="aid">年</span><select name="s761_date_MON" style="width:60px;" id="s761_date_MON" onchange="jsSetDD(&quot;s761_date&quot;, 0, 20190101, 20191231);"><option value=""></option><option value="1">1 </option><option value="2">2 </option><option value="3">3 </option><option value="4">4 </option></select><span class="aid">月</span><span class="aid" id="spanDays761_date"><select name="s761_date_DAY" style="width:60px;" id="s761_date_DAY"><option value=""></option></select><span class="aid">日</span></span>
+
+            </div><!--.form-control-->
+        </div><!--.form-group-->
+        <div class="form-group">
+            <p class="form-label">寄附金の種類</p>
+
+            <a href="javascript:void(0);" class="out-link" style="display:" title="寄附金の種類の選択について" onclick="YokuaruWindowOpen(getURL(2019,'L0807'));return false;">寄附金の種類の選択について</a>
+
+            <p class="error-detail" id="t761180s_err"></p>
+            <div class="form-control">
+                <select id="t761180s" name="t761180s" onchange="jsDispShousai();">
+                    <option value=""> </option>
+                          <option value="1">国に対する寄附金</option>
+                          <option value="2">都道府県、市区町村に対する寄附金（ふるさと納税など）</option>
+                          <option value="5">日本赤十字社支部に対する寄附金</option>
+                          <option value="25">共同募金会に対する寄附金</option>
+                          <option value="6">政党及び政治資金団体に対する寄附金</option>
+                          <option value="10">認定NPO法人等に対する寄附金</option>
+                          <option value="20">公益社団法人又は公益財団法人等に対する寄附金</option>
+                          <option value="7">上記以外の寄附金控除に該当する寄附金</option>
+                </select>
+                <p class="note" id="t761190r_5_msg" style="display: none;">「公益社団法人又は公益財団法人等に対する寄附金」は、主務官庁等より発行された「税額控除に係る証明書」をお持ちの方が選択可能です。<br>お持ちでない方は、「上記以外の寄附金控除に該当する寄附金」を選択してください。</p>
+            </div><!--.form-control-->
+        </div><!--.form-group-->
+    
+        <div class="form-group">
+            <div class="kifu_syousai" id="t761190r">
+                <div id="t761190r_1" style="">
+                    <p>都道府県又は市区町村のどちらに対する寄附か選択してください。</p>
+                    <div class="form-control">
+                        <ul class="radio horizon">
+                            <li><input type="radio" name="s16_kifusakiKbn" class="radio-item" id="s16_kifusakiKbn_1" value="1" onclick="jsChangeKifusaki();">
+                             <label for="s16_kifusakiKbn_1">都道府県に対する寄附</label></li>
+                            <li><input type="radio" name="s16_kifusakiKbn" class="radio-item" id="s16_kifusakiKbn_2" value="2" onclick="jsChangeKifusaki();">
+                            <label for="s16_kifusakiKbn_2">市区町村に対する寄附</label></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <span style="color:#dd2f2f;">リストボックスから都道府県名又は市区町村名を選択すると、寄附先の所在地及び名称が自動的に表示されます。</span>
+                    <span class="note">※　市区町村を選択した場合は、「都道府県」、「市区町村」の順にそれぞれ選択してください。</span>
+                    <div id="wPrefectureTag" style="display:inline-block; _display:inline;"><select name="tPrefecture" id="tPrefecture" onchange="jsChangePrefecture()"><option value="">- 都道府県を選択 -</option><option value="01000|北海道|北海道札幌市中央区北三条西６丁目１">北海道</option><option value="02000|青森県|青森県青森市長島１丁目１－１">青森県</option><option value="03000|岩手県|岩手県盛岡市内丸１０番１号">岩手県</option><option value="04000|宮城県|宮城県仙台市青葉区本町３丁目８－１">宮城県</option><option value="05000|秋田県|秋田県秋田市山王４丁目１－１">秋田県</option><option value="06000|山形県|山形県山形市松波２丁目８－１">山形県</option><option value="07000|福島県|福島県福島市杉妻町２－１６">福島県</option><option value="08000|茨城県|茨城県水戸市笠原町９７８－６">茨城県</option><option value="09000|栃木県|栃木県宇都宮市塙田１丁目１－２０">栃木県</option><option value="10000|群馬県|群馬県前橋市大手町１丁目１番１号">群馬県</option><option value="11000|埼玉県|埼玉県さいたま市浦和区高砂３丁目１５－１">埼玉県</option><option value="12000|千葉県|千葉県千葉市中央区市場町１－１">千葉県</option><option value="13000|東京都|東京都新宿区西新宿２丁目８－１">東京都</option><option value="14000|神奈川県|神奈川県横浜市中区日本大通１">神奈川県</option><option value="15000|新潟県|新潟県新潟市中央区新光町４番地１">新潟県</option><option value="16000|富山県|富山県富山市新総曲輪１番７号">富山県</option><option value="17000|石川県|石川県金沢市鞍月１丁目１番地">石川県</option><option value="18000|福井県|福井県福井市大手３丁目１７－１">福井県</option><option value="19000|山梨県|山梨県甲府市丸の内１丁目６－１">山梨県</option><option value="20000|長野県|長野県長野市大字南長野字幅下６９２－２">長野県</option><option value="21000|岐阜県|岐阜県岐阜市薮田南２丁目一番一号">岐阜県</option><option value="22000|静岡県|静岡県静岡市葵区追手町９－６">静岡県</option><option value="23000|愛知県|愛知県名古屋市中区三の丸３丁目１－２">愛知県</option><option value="24000|三重県|三重県津市広明町１３番地">三重県</option><option value="25000|滋賀県|滋賀県大津市京町４丁目１－１">滋賀県</option><option value="26000|京都府|京都府京都市上京区下立売通新町西入藪之内町">京都府</option><option value="27000|大阪府|大阪府大阪市中央区大手前２丁目１－２２">大阪府</option><option value="28000|兵庫県|兵庫県神戸市中央区下山手通５丁目１０－１">兵庫県</option><option value="29000|奈良県|奈良県奈良市登大路町３０">奈良県</option><option value="30000|和歌山県|和歌山県和歌山市小松原通１丁目１">和歌山県</option><option value="31000|鳥取県|鳥取県鳥取市東町１丁目２２０">鳥取県</option><option value="32000|島根県|島根県松江市殿町１">島根県</option><option value="33000|岡山県|岡山県岡山市北区内山下２丁目４－６">岡山県</option><option value="34000|広島県|広島県広島市中区基町１０－５２">広島県</option><option value="35000|山口県|山口県山口市滝町１－１">山口県</option><option value="36000|徳島県|徳島県徳島市万代町１丁目１">徳島県</option><option value="37000|香川県|香川県高松市番町４丁目１－１０">香川県</option><option value="38000|愛媛県|愛媛県松山市一番町４丁目４－２">愛媛県</option><option value="39000|高知県|高知県高知市丸ノ内１丁目２－２０">高知県</option><option value="40000|福岡県|福岡県福岡市博多区東公園７番７号">福岡県</option><option value="41000|佐賀県|佐賀県佐賀市城内１丁目１－５９">佐賀県</option><option value="42000|長崎県|長崎県長崎市尾上町３－１">長崎県</option><option value="43000|熊本県|熊本県熊本市中央区水前寺６丁目１８－１">熊本県</option><option value="44000|大分県|大分県大分市大手町３丁目１－１">大分県</option><option value="45000|宮崎県|宮崎県宮崎市橘通東２丁目１０－１">宮崎県</option><option value="46000|鹿児島県|鹿児島県鹿児島市鴨池新町１０－１">鹿児島県</option><option value="47000|沖縄県|沖縄県那覇市泉崎１丁目２－２">沖縄県</option></select></div>
+                    <div id="wMunicipalTag" style="padding-left:3em; display:inline-block; _display:inline;"><select name="tMunicipal" id="tMunicipal" onchange="jsChangeMunicipal()"><option value="">- 市区町村を選択 -</option><option value="12215|旭市|千葉県旭市ニの１９２０">旭市</option><option value="12222|我孫子市|千葉県我孫子市我孫子１８５８">我孫子市</option><option value="12238|いすみ市|千葉県いすみ市大原７４００－１">いすみ市</option><option value="12203|市川市|千葉県市川市八幡１丁目１－１">市川市</option><option value="12421|一宮町|千葉県長生郡一宮町一宮２４５７">一宮町</option><option value="12219|市原市|千葉県市原市国分寺台中央１丁目１－１">市原市</option><option value="12231|印西市|千葉県印西市大森２３６４－２">印西市</option><option value="12227|浦安市|千葉県浦安市猫実１丁目１－１">浦安市</option><option value="12239|大網白里市|千葉県大網白里市大網１１５－２">大網白里市</option><option value="12441|大多喜町|千葉県夷隅郡大多喜町大多喜９３">大多喜町</option><option value="12443|御宿町|千葉県夷隅郡御宿町須賀１５２２">御宿町</option><option value="12217|柏市|千葉県柏市柏５丁目１０－１">柏市</option><option value="12218|勝浦市|千葉県勝浦市新官１３４３－１">勝浦市</option><option value="12236|香取市|千葉県香取市佐原ロ２１２７">香取市</option><option value="12224|鎌ケ谷市|千葉県鎌ケ谷市新鎌ケ谷２丁目６－１">鎌ケ谷市</option><option value="12223|鴨川市|千葉県鴨川市横渚１４５０">鴨川市</option><option value="12206|木更津市|千葉県木更津市富士見１丁目２番１号">木更津市</option><option value="12225|君津市|千葉県君津市久保２丁目１３－１">君津市</option><option value="12463|鋸南町|千葉県安房郡鋸南町下佐久間３４５８">鋸南町</option><option value="12403|九十九里町|千葉県山武郡九十九里町片貝４０９９">九十九里町</option><option value="12342|神崎町|千葉県香取郡神崎町神崎本宿１６３">神崎町</option><option value="12329|栄町|千葉県印旛郡栄町安食台１丁目２">栄町</option><option value="12212|佐倉市|千葉県佐倉市海隣寺町９７">佐倉市</option><option value="12237|山武市|千葉県山武市殿台２９６">山武市</option><option value="12322|酒々井町|千葉県印旛郡酒々井町中央台４丁目１１">酒々井町</option><option value="12409|芝山町|千葉県山武郡芝山町小池９９２">芝山町</option><option value="12424|白子町|千葉県長生郡白子町関５０７４－２">白子町</option><option value="12232|白井市|千葉県白井市復１１２３">白井市</option><option value="12235|匝瑳市|千葉県匝瑳市八日市場ハ７９３－２">匝瑳市</option><option value="12229|袖ケ浦市|千葉県袖ケ浦市坂戸市場１－１">袖ケ浦市</option><option value="12347|多古町|千葉県香取郡多古町多古５８４">多古町</option><option value="12205|館山市|千葉県館山市北条１１４５－１">館山市</option><option value="12100|千葉市|千葉県千葉市中央区千葉港１－１">千葉市</option><option value="12202|銚子市|千葉県銚子市若宮町１－１">銚子市</option><option value="12423|長生村|千葉県長生郡長生村本郷１－７７">長生村</option><option value="12427|長南町|千葉県長生郡長南町長南２１１０">長南町</option><option value="12213|東金市|千葉県東金市東岩崎１－１">東金市</option><option value="12349|東庄町|千葉県香取郡東庄町笹川い４７１３－１３１">東庄町</option><option value="12233|富里市|千葉県富里市七栄６５２－１">富里市</option><option value="12426|長柄町|千葉県長生郡長柄町桜谷７１２">長柄町</option><option value="12220|流山市|千葉県流山市平和台１丁目１－１">流山市</option><option value="12216|習志野市|千葉県習志野市鷺沼２丁目１－１">習志野市</option><option value="12211|成田市|千葉県成田市花崎町７６０">成田市</option><option value="12208|野田市|千葉県野田市鶴奉７－１">野田市</option><option value="12226|富津市|千葉県富津市下飯野２４４３">富津市</option><option value="12204|船橋市|千葉県船橋市湊町２丁目１０－２５">船橋市</option><option value="12207|松戸市|千葉県松戸市根本３８７－５">松戸市</option><option value="12234|南房総市|千葉県南房総市富浦町青木２８">南房総市</option><option value="12422|睦沢町|千葉県長生郡睦沢町下之郷１６５０－１">睦沢町</option><option value="12210|茂原市|千葉県茂原市道表１">茂原市</option><option value="12230|八街市|千葉県八街市八街ほ３５－２９">八街市</option><option value="12221|八千代市|千葉県八千代市大和田新田３１２－５">八千代市</option><option value="12410|横芝光町|千葉県山武郡横芝光町宮川１１９０２">横芝光町</option><option value="12228|四街道市|千葉県四街道市鹿渡無番地">四街道市</option></select></div> 
+                </div>
+                
+                <div id="t761190r_2" style="display: none;">
+                    <p class="form-label">該当するものを選択してください。</p>
+                    <p class="error-detail"></p>
+                    <div class="form-control">
+                        <ul class="radio">
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_2a" value="1" disabled="">
+                                <label for="t761190r_2a">1 日本赤十字社を通じて支払った一定の義援金<br>　【例】令和元年台風19号に係る義援金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_2b" value="2" disabled="">
+                                <label for="t761190r_2b">2 住所地の日本赤十字社に対する寄附金（ 1 に該当するものを除く。）<br>　【例】東京都にお住まいの方が、日本赤十字社東京支部に寄附した場合</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_2c" value="3" disabled="">
+                                <label for="t761190r_2c">3 住所地以外の日本赤十字社に対する寄附金（ 1 に該当するものを除く。）<br>　【例】東京都にお住まいの方が、日本赤十字社千葉県支部に寄附した場合</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="t761190r_3" style="display: none;">
+                    <p class="form-label">該当するものを選択してください。</p>
+                    <p class="error-detail"></p>
+                    <div class="form-control">
+                            <ul class="radio">
+                                <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_3a" value="1" disabled="">
+                                    <label for="t761190r_3a">1 共同募金会を通じて支払った一定の義援金<br>　【例】令和元年台風19号に係る義援金</label></li>
+                                <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_3b" value="2" disabled="">
+                                    <label for="t761190r_3b">2 住所地の共同募金会に対する寄附金（ 1 に該当するものを除く。）<br>　【例】東京都にお住まいの方が、東京都共同募金会に寄附した場合</label></li>
+                                <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_3c" value="3" disabled="">
+                                    <label for="t761190r_3c">3 住所地以外の共同募金会に対する寄附金（ 1 に該当するものを除く。）<br>　【例】東京都にお住まいの方が、千葉県共同募金会に寄附した場合</label></li>
+                          </ul>
+                   </div>
+                </div>
+                
+                <div id="t761190r_4" style="display: none;">
+                    <p class="form-label">該当するものを選択してください。</p>
+                    <p class="error-detail"></p>
+                    <div class="form-control">
+                        <ul class="radio">
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_4a" value="1" disabled="">
+                                <label for="t761190r_4a">住所地の都道府県及び市区町村の両方が条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_4b" value="2" disabled="">
+                                <label for="t761190r_4b">住所地の都道府県のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_4c" value="3" disabled="">
+                                <label for="t761190r_4c">住所地の市区町村のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_4d" value="4" disabled="">
+                                <label for="t761190r_4d">住所地の都道府県及び市区町村の両方で条例により指定されていない寄附金、又は不明な場合</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="t761190r_4_sakukona" style="display: none;">
+                <span class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村にお問い合わせください。</span>
+                </div>
+                <div id="t761190r_4_web_intra" style="display: none;">
+                    <p class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村のホームページでご確認ください。</p>
+                    <p class="note" style="text-indent:2em; ">ホームページで確認しても分からない場合は、各都道府県・市区町村にお問い合わせください。</p>
+                    <p class="note">【参考】</p>
+                    <ul class="list link">
+                    <a id="kifukinLink" href="javascript:void(0);" class="out-link" title="ホームページの検索例はこちら" onclick="YokuaruWindowOpen(getURL(2019,'L0765'));return false;">ホームページの検索例はこちら</a>
+                    </ul>
+                </div>
+                
+                <div id="t761190r_5" style="display: none;">
+                    <p class="form-label">該当するものを選択してください。</p>
+                    <p class="error-detail"></p>
+                    <div class="form-control">
+                        <ul class="radio">
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_5a" value="1" disabled="">
+                                <label for="t761190r_5a">住所地の都道府県及び市区町村の両方が条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_5b" value="2" disabled="">
+                                <label for="t761190r_5b">住所地の都道府県のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_5c" value="3" disabled="">
+                                <label for="t761190r_5c">住所地の市区町村のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_5d" value="4" disabled="">
+                                <label for="t761190r_5d">住所地の都道府県及び市区町村の両方で条例により指定されていない寄附金、又は不明な場合</label></li>
+                       </ul>
+                   </div>
+                </div>
+                <div id="t761190r_5_sakukona" style="display: none;">
+                    <p class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村にお問い合わせください。</p>
+                </div>
+                <div id="t761190r_5_web_intra" style="display: none;">
+                    <p class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村のホームページでご確認ください。</p>
+                    <p class="note" style="text-indent:2em; ">ホームページで確認しても分からない場合は、各都道府県・市区町村にお問い合わせください。</p>
+                    <p class="note">【参考】</p>
+                    <ul class="list link">
+                        <a id="kifukinLink" href="javascript:void(0);" class="out-link" title="ホームページの検索例はこちら" onclick="YokuaruWindowOpen(getURL(2019,'L0765'));return false;">ホームページの検索例はこちら</a>
+                    </ul>
+                </div>
+                
+                <div id="t761190r_6" style="display: none;">
+                    <p class="form-label">該当するものを選択してください。</p>
+                    <p class="error-detail"></p>
+                    <div class="form-control">
+                        <ul class="radio">
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_6a" value="1" disabled="">
+                                <label for="t761190r_6a">住所地の都道府県及び市区町村の両方が条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_6b" value="2" disabled="">
+                                <label for="t761190r_6b">住所地の都道府県のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_6c" value="3" disabled="">
+                                <label for="t761190r_6c">住所地の市区町村のみが条例により指定した寄附金</label></li>
+                            <li><input type="radio" name="t761190r" class="radio-item" id="t761190r_6d" value="4" disabled="">
+                                <label for="t761190r_6d">住所地の都道府県及び市区町村の両方で条例により指定されていない寄附金、又は不明な場合</label></li>
+                        </ul>
+                     </div>
+                </div>
+                <div id="t761190r_6_sakukona" style="display: none;">
+                    <p class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村にお問い合わせください。</p>
+                </div>
+                <div id="t761190r_6_web_intra" style="display: none;">
+                    <p class="note">※　条例で指定されているか分からない場合は、お住まいの都道府県・市区町村のホームページでご確認ください。</p>
+                    <p class="note" style="text-indent:2em; ">ホームページで確認しても分からない場合は、各都道府県・市区町村にお問い合わせください。</p>
+                    <p class="note">【参考】</p>
+                    <ul class="list link">
+                        <a id="kifukinLink" href="javascript:void(0);" class="out-link" title="ホームページの検索例はこちら" onclick="YokuaruWindowOpen(getURL(2019,'L0765'));return false;">ホームページの検索例はこちら</a>
+                    </ul>
+                </div>
+            </div><!--.kifu_syousai-->
+        </div><!--.form-group-->
+        
+        <div class="column-2">
+            <div class="form-group">
+                <p class="form-label">支出した寄附金の金額</p>
+                <p class="error-detail" id="t761230t_err"></p>
+                <div class="form-control"><input type="text" class="textbox w20 money" id="t761230t" name="t761230t" maxlength="9"><span class="aid">円</span></div><!--.form-control-->
+            </div><!--.form-group-->
+            
+            <div class="form-group">
+                <p class="form-label">寄附先の所在地（全角28文字以内）</p>
+                <p class="error-detail" id="t761240t_err"></p>
+                <div class="form-control"><input type="text" class="textbox w60 fullcharOnly" id="t761240t" name="t761240t"></div><!--.form-control-->
+           </div><!--.form-group-->
+            
+            <div class="form-group">
+                <p class="form-label">寄附先の名称（全角28文字以内）</p>
+                <p class="error-detail" id="t761250t_err"></p>
+                <div class="form-control"><input type="text" class="textbox w60 fullcharOnly" id="t761250t" name="t761250t"></div><!--.form-control-->
+            </div><!--.form-group-->
+
+            <div id="shitei" style="">
+                <div class="form-group">
+                    <p class="form-label">ふるさと納税に係る総務大臣の指定の有無</p>
+
+                    <p class="error-detail" id="t761260c_err"></p>
+
+                    <div class="form-control">
+                        <input type="checkbox" class="checkbox-item" name="t761260c" id="t761260c">
+                        <label for="t761260c">ふるさと納税の対象とならない都道府県又は市区町村への寄附である。</label>
+                    </div>
+                    <a href="javascript:void(0);" class="out-link" onclick="YokuaruWindowOpen(getURL(2019,'L0842'));return false;">ふるさと納税の対象とならない都道府県又は市区町村の確認方法はこちら</a>
+                </div>
+            </div>
+
+            
+        </div><!--.column-2-->
+    </div>
+
+<script src=furusato.js>
+</script>
