@@ -12,7 +12,7 @@ It's all drop-downs.
 I have all of my data already in digital form.
 Drop-downs mean I can't copy and paste.
 If you did furusato to a town in Hokkaido
-good look finding the town from the list of ~100.
+good luck finding the town from the list of ~100.
 
 Also the date entry is particularly special.
 The year is fixed,
