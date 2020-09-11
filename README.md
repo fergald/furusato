@@ -1,3 +1,12 @@
+# NooOoOoOo!!1
+
+This whole thing is a waste of time!
+The printed output for the tax return
+doesn't contain any of the information you enter.
+All those dates, kens and machis are just thrown away.
+The only thing that matters is the total.
+Fuuuuuuuuuuuuuuuu...!
+
 # What?
 
 This is a hack for the furusato nozei entry page
